@@ -1,6 +1,5 @@
 <?php
 
-define('__APP_ROOT__', __DIR__);
 
 if (!function_exists('path')) {
     function path() {

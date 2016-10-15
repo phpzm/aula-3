@@ -11,10 +11,10 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "Fagoc\\App\\": "app/src/"
+            "Fagoc\\App\\": "project/src/"
         },
         "files": [
-            "bootstrap.php"
+            "project/core/bootstrap.php"
         ]
     }
 }
