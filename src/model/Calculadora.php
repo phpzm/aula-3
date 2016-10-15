@@ -1,6 +1,6 @@
 <?php
 
-class Matematica {
+class Calculadora {
 
     public function calcular($valor1, $valor2, $operador)
     {
