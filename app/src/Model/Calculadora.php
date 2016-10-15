@@ -1,5 +1,7 @@
 <?php
 
+namespace Fagoc\App\Model;
+
 /**
  * class Calculadora
  */

@@ -11,6 +11,7 @@
     "require": {},
     "autoload": {
         "psr-4": {
+            "Fagoc\\App\\": "app/src/"
         },
         "files": [
             "bootstrap.php"
