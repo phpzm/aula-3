@@ -1,8 +1,6 @@
 <h2>Exercício 5</h2>
 <p>Criar funções para realizar as operações matemáticas disponíveis</p>
 <?php
-//function
-require '../vendor/autoload.php';
 
 use Fagoc\Calculadora;
 
@@ -35,10 +33,10 @@ switch ($action) {
                 "</table>";
         }
         echo '<br>';
-        echo '<a href="file.php?action=novo"> De novo! De novo! </a>';
+        echo '<a href="./?action=novo"> De novo! De novo! </a>';
         break;
     default://visualização padrão do arquivo
-        echo '<form method="POST" action="file.php?action=calcular">';
+        echo '<form method="POST" action="./?action=calcular">';
         require_once __APP_ROOT__ . '/src/view/formulario-operacao.php';
         echo '<br>';
         echo '<input type="submit" value="Calcular"/>';

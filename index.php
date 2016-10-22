@@ -2,7 +2,7 @@
 
 define('__APP_ROOT__', __DIR__);
 
-require_once 'vendor/autoload.php';
+require_once __APP_ROOT__ . '/vendor/autoload.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,27 +22,22 @@ require_once 'vendor/autoload.php';
                 </div>
 
                 <div class="nav-right nav-menu">
-                    <a class="nav-item" href="./e=6">Exercio 6</a>
-                    <a class="nav-item" href="./e=7">Exercio 7</a>
-                    <a class="nav-item" href="./e=8">Exercio 8</a>
+                    <a class="nav-item" href="./6">Exercio 6</a>
+                    <a class="nav-item" href="./7">Exercio 7</a>
+                    <a class="nav-item" href="./8">Exercio 8</a>
                 </div>
             </div>
         </nav>
-        <pre>
-        <?php
-        use Fagoc\Core\Router;
+        <div class="container">
+            <?php
+                use Fagoc\Core\Router;
 
-        $router = new Router('/exercicio/6', 'GET');
+                $router = new Router();
 
-        $router->get('/exercicio/6', function() {
-            $exercicio = __DIR__ . '/exercicio-6/' . 'file.php';
-            if (file_exists($exercicio)) {
-                require_once $exercicio;
-            }
-        });
+                require_once __APP_ROOT__ . '/routes.php';
 
-        $router->run();
-        ?>
-    </pre>
+                $router->run();
+            ?>
+        </div>
     </body>
 </html>
