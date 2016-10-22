@@ -1,9 +1,31 @@
 <?php
 
+namespace Fagoc;
+
+use Fagoc\Recurso\Dono;
+
 /**
  * class Calculadora
  */
 class Calculadora {
+
+    public $dono;
+    private $atributos = [];
+
+    public function __construct($dono)
+    {
+        $this->dono = new Dono($dono);
+    }
+
+    public function __set($name, $value)
+    {
+        $this->atributos[$name] = $value;
+    }
+
+    public function __get($name)
+    {
+        return isset($this->atributos[$name]) ? $this->atributos[$name] : null;
+    }
 
     /**
      * @param $valor1

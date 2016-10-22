@@ -1,8 +1,17 @@
 <?php
 
-//define uma constante com escopo global no projeto
-define('__APP_ROOT__','/home/william/Devlopment/github.com/phpzm/aula-3');
+function get($index) {
+    $value = null;
+    if (isset($_GET[$index])) {
+        $value = $_GET[$index];
+    }
+    return  $value;
+}
 
 function post($index) {
-    return $_POST[$index];
+    $value = null;
+    if (isset($_POST[$index])) {
+        $value = $_POST[$index];
+    }
+    return  $value;
 }
