@@ -1,5 +1,5 @@
-<h2>Exercício 6</h2>
-<p>Explorar o uso de argumentos dinâmicos para as funções e organizar uma fluxo entre elas</p>
+<h2 class="title is-2">Exercício 6</h2>
+<p class="content">Explorar o uso de argumentos dinâmicos para as funções e organizar uma fluxo entre elas</p>
 <?php
 //function
 //require_once
