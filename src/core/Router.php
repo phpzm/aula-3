@@ -18,15 +18,8 @@ class Router
     */
     private $routes = [];
 
-    public function __construct($uri = null, $method = null)
+    public function __construct()
     {
-        if (!is_null($uri)) {
-            $this->uri = $uri;
-        }
-        if (!is_null($method)) {
-            $this->method = $method;
-        }
-
         $this->parseRequest();
     }
 
@@ -43,7 +36,7 @@ class Router
 
         $this->uri = $uri;
         $this->method = isset($_SERVER['REQUEST_METHOD']) ? $_SERVER['REQUEST_METHOD'] : $this->method;
-        $this->url = isset($server['HTTP_HOST']) ? $server['HTTP_HOST'] . $start : $this->url;
+        $this->url = isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] . $start : $this->url;
     }
 
     public function __call($name, $arguments)

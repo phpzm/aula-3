@@ -15,3 +15,12 @@ function post($index) {
     }
     return  $value;
 }
+
+function route($path, $print = true)
+{
+    $route = '//' . \Fagoc\Core\App::router()->getUrl() . '/' . $path;
+    if ($print) {
+        echo $route;
+    }
+    return $route;
+}
