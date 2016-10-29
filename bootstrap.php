@@ -24,3 +24,18 @@ function route($path, $print = true)
     }
     return $route;
 }
+
+function out($value, $index = null)
+{
+    if ($index) {
+        if (is_array($value)) {
+            $value = isset($value[$index]) ? $value[$index] : '';
+        } else if (is_object($value)) {
+            $value = isset($value->$index) ? $value->$index : '';
+        }
+    }
+    if (gettype($value) !== 'string') {
+        $value = json_encode($value);
+    }
+    echo $value;
+}

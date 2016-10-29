@@ -8,16 +8,29 @@ class Model
 
     public function create($data)
     {
-        $filename = __APP_ROOT__ . '/storage/' . $this->collection . '.json';
+        $stored = $this->read();
+
+        $stored[] = $data;
+
+        $json = json_encode($stored);
+
+        return file_put_contents($this->filename(), $json);
+    }
+
+    public function read()
+    {
+        $filename = $this->filename();
 
         $stored = [];
         if (file_exists($filename)) {
             $stored = json_decode(file_get_contents($filename));
         }
-        $stored[] = $data;
 
-        $json = json_encode($stored);
+        return $stored;
+    }
 
-        return file_put_contents($filename, $json);
+    private function filename()
+    {
+        return __APP_ROOT__ . '/storage/' . $this->collection . '.json';
     }
 }
