@@ -12,6 +12,7 @@
     "autoload": {
         "psr-4": {
             "Fagoc\\": "src/model",
+            "Fagoc\\Controller\\": "src/controller",
             "Fagoc\\Core\\": "src/core"
         },
         "files": [
