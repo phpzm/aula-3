@@ -6,6 +6,7 @@ class Router
 {
     private $method = 'GET';
     private $uri = '';
+    private $url = '';
 
     /**
     * routes[
@@ -42,6 +43,7 @@ class Router
 
         $this->uri = $uri;
         $this->method = isset($_SERVER['REQUEST_METHOD']) ? $_SERVER['REQUEST_METHOD'] : $this->method;
+        $this->url = isset($server['HTTP_HOST']) ? $server['HTTP_HOST'] . $start : $this->url;
     }
 
     public function __call($name, $arguments)
@@ -73,4 +75,20 @@ class Router
             }
         }
     }
+
+    public function getMethod()
+    {
+        return $this->method;
+    }
+
+    public function getUri()
+    {
+        return $this->uri;
+    }
+
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
 }
